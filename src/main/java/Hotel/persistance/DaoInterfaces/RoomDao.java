@@ -10,4 +10,6 @@ import java.sql.Date;
 public interface RoomDao extends AbstractDao<Room> {
 
     boolean isFree(int id, Date dateInt, Date dateOut);
+
+    boolean find(int id);
 }
