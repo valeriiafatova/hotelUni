@@ -7,5 +7,6 @@ import Hotel.model.User;
  */
 public interface UserDao extends AbstractDao<User> {
 
+    User getUserByPhone(String phone);
     User getUserWithReservation(int id);
 }

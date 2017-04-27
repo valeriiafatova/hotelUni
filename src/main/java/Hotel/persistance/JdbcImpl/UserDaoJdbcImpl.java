@@ -39,6 +39,11 @@ public class UserDaoJdbcImpl extends AbstractDaoJdbcImpl<User> implements UserDa
     }
 
     @Override
+    public User getUserByPhone(String phone) {
+        return find(SELECT_USER_BY_PHONE, statement -> statement.setString(1, phone), new UserMapper(daoFactory));
+    }
+
+    @Override
     public User getUserWithReservation(int id) {
         User user = findById(id);
         user.setReservationList(daoFactory.getReservationDao().getByUserId(id));
