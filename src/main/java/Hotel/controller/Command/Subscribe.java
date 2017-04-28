@@ -18,9 +18,11 @@ public class Subscribe implements Command {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name = request.getParameter("name");
-        String email = request.getParameter("email");
+//        String name = request.getParameter("name");
+//        String email = request.getParameter("email");
 
+        String name = "jj";
+        String email = "jj";
         if (name == null || email == null) {
             response.sendRedirect("/pages/502.html");
             return;

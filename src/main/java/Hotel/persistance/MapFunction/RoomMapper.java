@@ -21,6 +21,6 @@ public class RoomMapper extends Mapper<Room>{
                 set.getInt("number"),
                 set.getInt("roomCount"),
                 set.getInt("price"),
-                set.getString("roomType")) : null;
+                set.getString("type")) : null;
     }
 }

@@ -16,7 +16,7 @@ public class ReservationMapper extends Mapper<Reservation> {
 
     @Override
     public Reservation parse(ResultSet set) throws SQLException {
-        return set != null? new Reservation(set.getInt("id"),
+        return set != null? new Reservation(set.getInt("idreservation"),
                 daoFactory.getUserDao().findById(set.getInt("idUser")),
                 daoFactory.getRoomDao().findById(set.getInt("idRoom")),
                 set.getDate("dateIn"),

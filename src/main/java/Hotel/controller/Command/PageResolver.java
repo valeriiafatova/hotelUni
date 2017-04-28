@@ -22,14 +22,16 @@ public class PageResolver implements Command {
         String requestURI = request.getRequestURI();
 
         LOGGER.debug("requestURI: " + requestURI);
-        if ("/".equals(requestURI) || "/home/".equals(requestURI) || "/home".equals(requestURI)) {
+        if ("/".equals(requestURI) || "/main/home/".equals(requestURI) || "/main/".equals(requestURI)) {
             LOGGER.debug("redirect /home/");
-            request.getRequestDispatcher("/home").forward(request, response);
+            request.getRequestDispatcher("/main/home").forward(request, response);
             return;
         }
 
+        LOGGER.debug("after if");
         int index = requestURI.lastIndexOf('/');
         String command = requestURI.substring(index + 1);
+        LOGGER.debug("command: " + command);
 
         commandFactory.getCommand(command).execute(request, response);
     }

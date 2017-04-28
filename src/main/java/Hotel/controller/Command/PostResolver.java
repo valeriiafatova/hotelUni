@@ -21,8 +21,9 @@ public class PostResolver implements Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         CommandFactory commandFactory = CommandFactory.getInstance();
-
         String command = request.getParameter("Submit");
+
+        LOGGER.debug(command);
 
         if (command == null) {
             response.sendRedirect("/pages/502.html");

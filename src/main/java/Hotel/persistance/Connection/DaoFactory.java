@@ -16,6 +16,9 @@ public abstract class DaoFactory {
     public static DaoFactory getDaoFactory(){
         return new JdbcDaoFactoryPool();
     }
+    public static DaoFactory getDaoFactoryTest(){
+        return new JdbcDaoFactoryTest();
+    }
 
     public abstract Connection getConnection() throws SQLException;
 

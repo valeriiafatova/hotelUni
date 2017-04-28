@@ -34,8 +34,8 @@ public class ReservationDaoJdbcImpl extends AbstractDaoJdbcImpl<Reservation> imp
     private static final String INSERT = "INSERT INTO " + RESERVATION_TABLE + " (" + RESERVATION_COLUMN_ID_ROOM + ", "
             + RESERVATION_COLUMN_ID_USER + ", "
             + RESERVATION_COLUMN_ID_DATE_IN + ", "
-            + RESERVATION_COLUMN_ID_DATE_OUT + " "
-            + "VALUES (?, ?) ";
+            + RESERVATION_COLUMN_ID_DATE_OUT + ") "
+            + "VALUES (?, ?, ?, ?) ";
 
     public static final String UPDATE = "UPDATE " + RESERVATION_TABLE + " SET "
             + RESERVATION_COLUMN_ID_ROOM + " = ?, "
@@ -49,11 +49,10 @@ public class ReservationDaoJdbcImpl extends AbstractDaoJdbcImpl<Reservation> imp
     @Override
     public int create(Reservation entity) {
         return create(INSERT, statement -> {
-            statement.setInt(1, entity.getId());
-            statement.setInt(2, entity.getRoom().getId());
-            statement.setInt(3, entity.getUser().getId());
-            statement.setDate(4, entity.getDateIn());
-            statement.setDate(5, entity.getDateOut());
+            statement.setInt(1, entity.getRoom().getId());
+            statement.setInt(2, entity.getUser().getId());
+            statement.setDate(3, entity.getDateIn());
+            statement.setDate(4, entity.getDateOut());
         });
     }
 

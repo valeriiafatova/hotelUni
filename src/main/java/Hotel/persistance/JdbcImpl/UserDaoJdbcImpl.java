@@ -24,8 +24,8 @@ public class UserDaoJdbcImpl extends AbstractDaoJdbcImpl<User> implements UserDa
     private static final String SELECT_ALL = "SELECT * FROM " + USER_TABLE;
 
     private static final String INSERT = "INSERT INTO " + USER_TABLE + " (" + USER_COLUMN_NAME + ", "
-            + USER_COLUMN_PHONE + " "
-            + "VALUES (?, ?) ";
+            + USER_COLUMN_PHONE + ") "
+            + " VALUES (?, ?) ";
 
     public static final String UPDATE = "UPDATE " + USER_TABLE + " SET "
             + USER_COLUMN_NAME + " = ?, "
@@ -53,9 +53,8 @@ public class UserDaoJdbcImpl extends AbstractDaoJdbcImpl<User> implements UserDa
     @Override
     public int create(User entity) {
         return create(INSERT, statement -> {
-            statement.setInt(1, entity.getId());
-            statement.setString(2, entity.getName());
-            statement.setString(3, entity.getPhone());
+            statement.setString(1, entity.getName());
+            statement.setString(2, entity.getPhone());
         });
     }
 

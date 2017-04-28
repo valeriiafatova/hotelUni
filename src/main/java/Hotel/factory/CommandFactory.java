@@ -17,9 +17,16 @@ public class CommandFactory {
     public CommandFactory() {
         commandMap.put("notFound", new NotFound());
         commandMap.put("openPage", new OpenPage());
-        commandMap.put("reserveRoom", new ReserveRoom());
         commandMap.put("subscribe", new Subscribe());
         commandMap.put("showRooms", new ShowRooms());
+        commandMap.put("about_us", new OpenPage());
+        commandMap.put("reservation", new OpenPage());
+        commandMap.put("gallery", new OpenPage());
+        commandMap.put("reservInfo", new OpenPage());
+        commandMap.put("contact", new OpenPage());
+        commandMap.put("home", new Home());
+        commandMap.put("reservRoom", new ReserveRoom());
+
     }
 
     public static CommandFactory getInstance() {
