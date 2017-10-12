@@ -1,0 +1,40 @@
+.container{
+    margin: 50px 50px 0;
+
+}
+.container ul.my{
+    display: inline-block;
+    display: -moz-box;
+    display: -webkit-box;
+
+    box-orient:horizontal;
+    o-box-orient:horizontal;
+    -moz-box-orient:horizontal;
+    -ms-box-orient:horizontal;
+    -webkit-box-orient:horizontal;
+
+    list-style: none;
+}
+.container li{
+    box-flex:1;
+    -webkit-box-flex:1;
+    -moz-box-flex:1;
+    -ms-box-flex:1;
+
+    background: white;
+    opacity:0.6;
+    text-align:center;
+    vertical-align:baseline;
+    padding: 10px 0;
+    border: 1px solid #222;
+    border-left: none;
+}
+li:first-child.my{
+    border-left: 1px solid #222;
+}
+a{
+    text-decoration: none;
+    /*color: white;*/
+    -webkit-text-stroke: 1px black;
+    font: 35px arial, verdana, sans-serif;
+}

@@ -1,0 +1,43 @@
+
+.row{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.room-list-text {
+    padding-bottom: 48px;
+    padding-top: 58px;
+}
+
+.room-list-text > h3 {
+    margin-bottom: 15px;
+}
+
+td.my {
+    padding: 20px;
+}
+
+table.room{
+    height: auto;
+    padding: 10px 50px 20px 260px
+}
+
+img.my{
+    width: 400px;
+    height: 300px;
+}
+
+.button {
+    margin-top: 5px;
+    display: inline-block;
+    padding: 1em 1em;
+    background: cornflowerblue;
+    width: auto;
+    border-radius: 7px;
+    letter-spacing: 0.20em;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1em;
+    color: #FFF;
+}
